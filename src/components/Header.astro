@@ -45,7 +45,7 @@ import { SITE_TITLE } from '../consts';
 	}
 	.logo-link img {
 		display: block;
-		max-height: 60px; /* Ajuste conforme necessário */
+		max-height: 55px;
 		width: auto;
 	}
 	.internal-links {
@@ -68,7 +68,6 @@ import { SITE_TITLE } from '../consts';
 		display: flex;
 		align-items: center;
 	}
-	/* Esconde o texto do título para leitores de tela apenas, mantendo o SEO */
 	.sr-only {
 		position: absolute;
 		width: 1px;
@@ -80,16 +79,31 @@ import { SITE_TITLE } from '../consts';
 		white-space: nowrap;
 		border-width: 0;
 	}
+
+	/* RESOLUÇÃO PARA O CELULAR ATRApalhado */
 	@media (max-width: 720px) {
-		.social-links {
-			display: none;
+		header {
+			padding: 0.8em 0.5em;
+		}
+		nav {
+			flex-direction: column; /* Coloca a logo em cima e links embaixo */
+			gap: 10px;
 		}
 		.internal-links {
-			font-size: 0.8em;
+			width: 100%;
+			justify-content: center; /* Centraliza os links */
+			flex-wrap: wrap; /* Se não couber, ele pula para a linha de baixo sozinho */
 			gap: 5px;
 		}
+		nav a {
+			padding: 0.4em 0.6em;
+			font-size: 0.85rem; /* Diminui um pouco a letra para caber tudo */
+		}
+		.social-links {
+			display: none; /* Remove o ícone do GitHub no celular para ganhar espaço */
+		}
 		.logo-link img {
-			max-height: 40px;
+			max-height: 45px; /* Diminui um pouco a logo no celular */
 		}
 	}
 </style>
