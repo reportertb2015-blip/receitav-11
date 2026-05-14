@@ -10,156 +10,25 @@ type Props = CollectionEntry<'blog'>['data'];
 
 const { title, description, pubDate, updatedDate, heroImage, category } = Astro.props;
 
-// 1. Busca todas as receitas da coleção 'blog'
+// 1. Busca todas as receitas
 const allPosts = await getCollection('blog');
 
-// 2. Filtro robusto para receitas relacionadas
-const relatedPosts = allPosts
+// 2. Filtro Inteligente: tenta mesma categoria, se não houver, pega qualquer um
+let relatedPosts = allPosts
+	.filter((post) => post.data.title !== title) // Nunca mostra o post atual
 	.filter((post) => {
-		// Garante que não sugira o post que já está sendo lido
-		const isDifferent = post.data.title !== title;
-		
-		// Normaliza as categorias (remove espaços e ignora maiúsculas/minúsculas)
 		const currentCat = category ? category.trim().toLowerCase() : '';
 		const postCat = post.data.category ? post.data.category.trim().toLowerCase() : '';
-		
-		return isDifferent && postCat === currentCat && postCat !== '';
-	})
-	.slice(0, 3);
+		return currentCat !== '' && postCat === currentCat;
+	});
+
+// Se houver menos de 3 na mesma categoria, completa com posts aleatórios
+if (relatedPosts.length < 3) {
+	const additionalPosts = allPosts
+		.filter((post) => post.data.title !== title && !relatedPosts.includes(post))
+		.sort(() => Math.random() - 0.5);
+	relatedPosts = [...relatedPosts, ...additionalPosts].slice(0, 3);
+} else {
+	relatedPosts = relatedPosts.slice(0, 3);
+}
 ---
-
-<html lang="pt-br">
-	<head>
-		<BaseHead title={title} description={description} image={heroImage} />
-		<style>
-			main {
-				width: 100%;
-				max-width: 100%;
-				margin: 0;
-				background: #ffffff;
-			}
-			.hero-image {
-				width: 100%;
-				max-width: 1020px;
-				margin: 0 auto;
-			}
-			.hero-image img {
-				display: block;
-				margin: 0 auto;
-				border-radius: 12px;
-				box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-				object-fit: cover;
-			}
-			.prose {
-				width: 720px;
-				max-width: calc(100% - 2em);
-				margin: auto;
-				padding: 2em 1em;
-				color: #333;
-				line-height: 1.8;
-				font-size: 1.1rem;
-			}
-			.title {
-				margin-bottom: 2em;
-				padding: 1em 0;
-				text-align: center;
-			}
-			.title h1 {
-				margin: 0 0 0.5em 0;
-				color: #2e7d32; /* Verde temático Cura Natureza */
-				font-size: 2.5rem;
-			}
-			.date {
-				margin-bottom: 0.5em;
-				color: #666;
-				font-weight: 500;
-			}
-			.last-updated-on {
-				font-style: italic;
-				font-size: 0.9rem;
-			}
-			hr { border: 0; border-top: 1px solid #eee; margin: 2rem 0; }
-
-			/* Estilos para a seção automática de Receitas Relacionadas */
-			.related-wrapper {
-				margin-top: 3em;
-				padding-top: 2em;
-				border-top: 2px solid #f0f0f0;
-			}
-			.related-posts {
-				display: grid;
-				grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-				gap: 1.5rem;
-				margin-top: 1.5rem;
-			}
-			.related-card {
-				text-decoration: none;
-				color: inherit;
-				transition: transform 0.2s;
-			}
-			.related-card:hover {
-				transform: translateY(-5px);
-			}
-			.related-card img {
-				width: 100%;
-				height: 150px;
-				object-fit: cover;
-				border-radius: 8px;
-			}
-			.related-card h4 {
-				margin: 0.5rem 0;
-				font-size: 1rem;
-				color: #2e7d32;
-				line-height: 1.4;
-			}
-		</style>
-	</head>
-
-	<body>
-		<Header />
-		<main>
-			<article>
-				<div class="hero-image">
-					{heroImage && <img width={1020} height={510} src={heroImage} alt={`Imagem de ${title}`} />}
-				</div>
-				<div class="prose">
-					<div class="title">
-						<div class="date">
-							<FormattedDate date={pubDate} />
-							{
-								updatedDate && (
-									<div class="last-updated-on">
-										Atualizado em <FormattedDate date={updatedDate} />
-									</div>
-								)
-							}
-						</div>
-						<h1>{title}</h1>
-						<p><em>Por Anderson Kochanski</em></p>
-						<hr />
-					</div>
-					
-					<slot />
-
-					{/* Seção automática de sugestões no portal Receita Grátis */}
-					{relatedPosts.length > 0 && (
-						<div class="related-wrapper">
-							<h2>Você também pode gostar:</h2>
-							<div class="related-posts">
-								{relatedPosts.map((post) => (
-									<a href={`/blog/${post.id}/`} class="related-card">
-										{post.data.heroImage && (
-											<img src={post.data.heroImage} alt="" />
-										)}
-										<h4>{post.data.title}</h4>
-									</a>
-								))}
-							</div>
-						</div>
-					)}
-				</div>
-			</article>
-		</main>
-		<Footer />
-	</body>
-</html>
