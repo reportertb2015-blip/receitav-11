@@ -10,10 +10,8 @@ type Props = CollectionEntry<'blog'>['data'];
 
 const { title, description, pubDate, updatedDate, heroImage, category } = Astro.props;
 
-// 1. Busca todas as receitas
 const allPosts = await getCollection('blog');
 
-// 2. Filtro Seguro: Garante que o artigo atual não apareça e embaralha os outros
 const relatedPosts = allPosts
 	.filter((post) => post.data.title !== title)
 	.sort(() => Math.random() - 0.5)
@@ -23,6 +21,8 @@ const relatedPosts = allPosts
 <html lang="pt-br">
 	<head>
 		<BaseHead title={title} description={description} image={heroImage} />
+		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4017468224736206" crossorigin="anonymous"></script>
+		
 		<style>
 			main { width: 100%; max-width: 100%; margin: 0; background: #ffffff; }
 			.hero-image { width: 100%; max-width: 1020px; margin: 0 auto; }
@@ -32,8 +32,9 @@ const relatedPosts = allPosts
 			.title h1 { margin: 0 0 0.5em 0; color: #2e7d32; font-size: 2.5rem; }
 			.date { margin-bottom: 0.5em; color: #666; font-weight: 500; }
 			hr { border: 0; border-top: 1px solid #eee; margin: 2rem 0; }
+			
+			.ad-slot { margin: 2rem 0; text-align: center; min-height: 100px; }
 
-			/* Estilos Relacionados */
 			.related-wrapper { margin-top: 3em; padding-top: 2em; border-top: 2px solid #f0f0f0; }
 			.related-posts { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-top: 1.5rem; }
 			.related-card { text-decoration: none; color: inherit; transition: transform 0.2s; display: block; }
@@ -59,15 +60,34 @@ const relatedPosts = allPosts
 						<p><em>Por Anderson Kochanski</em></p>
 						<hr />
 					</div>
+
+					<div class="ad-slot">
+						<ins class="adsbygoogle"
+							 style="display:block"
+							 data-ad-client="ca-pub-4017468224736206"
+							 data-ad-slot="7595583863"
+							 data-ad-format="auto"
+							 data-full-width-responsive="true"></ins>
+						<script is:inline>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+					</div>
 					
 					<slot />
+
+					<div class="ad-slot">
+						<ins class="adsbygoogle"
+							 style="display:block"
+							 data-ad-client="ca-pub-4017468224736206"
+							 data-ad-slot="7595583863"
+							 data-ad-format="auto"
+							 data-full-width-responsive="true"></ins>
+						<script is:inline>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+					</div>
 
 					{relatedPosts.length > 0 && (
 						<div class="related-wrapper">
 							<h2 style="text-align: center; color: #2e7d32;">Você também pode gostar:</h2>
 							<div class="related-posts">
 								{relatedPosts.map((post) => (
-									/* MUDANÇA AQUI: usando slug em vez de id para evitar erro 404 */
 									<a href={`/blog/${post.slug || post.id}/`} class="related-card">
 										<img src={post.data.heroImage} alt="" />
 										<h4>{post.data.title}</h4>
