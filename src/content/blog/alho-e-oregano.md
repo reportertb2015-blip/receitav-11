@@ -2,7 +2,7 @@
 title: "Alho e Orégano: O Segredo que Poucos Médicos Revelam sobre Esta Combinação Poderosa"
 description: "Descubra como o chá de alho com orégano pode fortalecer sua imunidade e por que essa receita antiga está voltando com tudo na saúde natural."
 pubDate: "2026-05-14"
-heroImage: "/blog-placeholder-alho-oregano.web"
+heroImage: "/placeholder-alho-oregano.web"
 category: "saude-natural"
 ---
 
