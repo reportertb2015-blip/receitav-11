@@ -1,10 +1,5 @@
-import { defineConfig } from 'astro/config';
-import mdx from '@astrojs/mdx';
-import sitemap from '@astrojs/sitemap';
+// Place any global data in this file.
+// You can import this data from anywhere in your site by using the `import` keyword.
 
-// https://astro.build/config
-export default defineConfig({
-	// IMPORTANTE: Coloque o seu domínio real abaixo para as fotos aparecerem no Zap
-	site: 'https://www.receitagratis.com.br', 
-	integrations: [mdx(), sitemap()],
-});
+export const SITE_TITLE = "Astro Blog";
+export const SITE_DESCRIPTION = "Welcome to my website!";
