@@ -13,7 +13,7 @@ tags:
 O **Receita Grátis**, sob a curadoria de **Anderson Kochanski**, traz uma combinação poderosa para o seu dia a dia. O alecrim, conhecido como a "erva da alegria", aliado ao limão, cria uma infusão que estimula o raciocínio e purifica o organismo.
 
 ## Benefícios desta Infusão
-Esta bebida é excelente para quem precisa de clareza mental durante o trabalho e para aliviar o desconforto abdominal após as refeições.
+Esta, bebida é excelente para quem precisa de clareza mental durante o trabalho e para aliviar o desconforto abdominal após as refeições.
 
 ---
 
