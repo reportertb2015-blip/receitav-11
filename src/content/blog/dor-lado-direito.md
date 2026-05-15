@@ -2,7 +2,7 @@
 title: "Dor no lado direito do abdômen: o que seu corpo está tentando lhe dizer"
 description: "Sentir dor no lado direito pode ser desde gases até sinais do fígado. Saiba como identificar e o que fazer naturalmente."
 pubDate: "May 14 2026"
-heroImage: "/dor-abdominal-lado-direito..webp"
+heroImage: "/dor-abdominal-lado-direito.webp"
 category: "Cura Natureza"
 ---
 
