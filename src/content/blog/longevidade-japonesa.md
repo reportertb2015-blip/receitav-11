@@ -2,7 +2,7 @@
 title: "O médico mais velho do Japão aconselha: Beba apenas um copo desta mistura verde"
 description: "Descubra o segredo dos centenários japoneses para limpar as artérias e manter a saúde jovem com apenas um copo por dia."
 pubDate: "May 14 2026"
-heroImage: "/copo-verde.web"
+heroImage: "/copo-verde.webp"
 category: "Cura Natureza"
 ---
 
