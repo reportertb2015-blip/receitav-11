@@ -2,9 +2,10 @@
 title: "Fogão Atlas 5 Bocas Atenas Glass: Review Completo, Desempenho e Se Vale a Pena em 2026"
 pubDate: 2026-07-04T00:00:00.000Z
 description: "Análise completa e atualizada do Fogão Atlas 5 Bocas Atenas Glass. Veja desempenho, forno, segurança, prós, contras e para quem realmente vale a pena."
-image: "/fogao-atlas-shopee.webp"
+heroImage:  "/fogao-atlas-shopee.webp"
 author: "Redação Review Casa & Cozinha"
 category: "Eletrodomésticos"
+
 ---
 
 O **Fogão Atlas 5 Bocas Atenas Glass** se tornou um dos modelos mais buscados por quem deseja renovar a cozinha com um visual moderno sem gastar em modelos premium.
