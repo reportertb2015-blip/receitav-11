@@ -10,9 +10,7 @@ Se você está renovando a cozinha e procura um fogão moderno, espaçoso e fác
 Mas será que ele realmente entrega bom desempenho no dia a dia e compensa o investimento?  
 Nesta análise completa, você confere os principais pontos positivos, pontos de atenção e se o custo-benefício faz sentido para sua rotina.
 
-<div align="center" style="margin: 25px 0;">
-  <img src="/Fogao-atlas.webp" alt="Fogão Atlas 5 Bocas Atenas Glass com mesa de vidro" style="max-width:500px;width:100%;border-radius:8px;box-shadow:0 4px 10px rgba(0,0,0,0.1);">
-</div>
+
 
 ## Design moderno com mesa de vidro temperado
 
