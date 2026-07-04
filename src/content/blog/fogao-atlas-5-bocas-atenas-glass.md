@@ -1,6 +1,6 @@
 ---
-title: "Fogão Atlas 5 Bocas Atenas Glass com Mesa de Vidro Vale a Pena? Preço e Análise"
-date: "2026-07-04"
+title: "Fogão Atlas 5 Bocas Atenas Glass com Mesa de Vidro: Vale a Pena? Preço e Análise"
+pubDate: 2026-07-04
 description: "Veja se o Fogão Atlas 5 Bocas Atenas Glass vale a pena. Análise completa com design, potência, forno, prós, contras e onde comprar com segurança."
 image: "/fogao-atlas-5-bocas.webp"
 ---
@@ -78,7 +78,7 @@ De acordo com avaliações de compradores, o modelo se destaca pela **entrega r�
 A média de avaliação é bastante alta, o que reforça a confiabilidade do produto.
 
 <div align="center" style="margin:25px 0;">
-  <img src="/avalicao-do-fogao.webp" alt="Avaliações do Fogão Atlas Atenas Glass" style="max-width:500px;width:100%;border-radius:8px;box-shadow:0 4px 10px rgba(0,0,0,0.1);">
+  <img src="https://abrir.receitagratis.com/avaliacao-do-fogao.webp" alt="Avaliações do Fogão Atlas Atenas Glass" style="max-width:500px;width:100%;border-radius:8px;box-shadow:0 4px 10px rgba(0,0,0,0.1);">
 </div>
 
 ## Conclusão: vale a pena comprar o Fogão Atlas Atenas Glass?
